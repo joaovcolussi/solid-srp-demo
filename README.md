@@ -1,42 +1,66 @@
+# **solid-srp-demo**
 
-# solid-srp-demo
+Projeto simples em **PHP**, desenvolvido para demonstrar o **Princípio da Responsabilidade Única (Single Responsibility Principle - SRP)** do **SOLID**.  
+O sistema permite **cadastrar e listar produtos**, aplicando separação clara de responsabilidades entre camadas.
 
-### Grupo
-- **Alexandre - 1686088**
-- **João - 2003753**
+---
 
-Projeto simples em PHP com duas funções:
-- **Cadastro e listagem de produtos**
+##  **Integrantes**
+- Alexandre — 1686088  
+- João — 2003753  
 
-## Como executar
-1. Requisitos: PHP (com Composer) e XAMPP.
-2. Rode `composer dump-autoload`
-3. Starta o Xampp
-4. Acesse no navegador: `http://localhost/solid-srp-demo/`
+---
 
-## Estrutura
+##  **Como executar**
+
+1. **Pré-requisitos:**  
+   - PHP instalado (com **Composer**)  
+   - Servidor local como **XAMPP**
+
+2. **Configuração:**  
+   ```bash
+   composer dump-autoload
+   ```
+
+3. **Execução:**  
+   - Inicie o servidor Apache no XAMPP  
+   - Acesse no navegador:  
+     ```
+     http://localhost/solid-srp-demo/
+     ```
+
+---
+
+##  **Estrutura do Projeto**
 ```
-/SOLID-SRP-DEMO
-├── public/                 # Camada de Apresentação (Views e Entradas HTTP)
-│   ├── create.php          # (Cadastro/Processamento do POST)
-│   ├── index.php           # (Página Principal ou Rota)
-│   └── products.php        # (Listagem de Produtos)
-├── src/                    # Código Fonte da Aplicação (Organizado por Camadas/Namespaces)
-│   ├── Application/        # Camada de Aplicação/Serviço
-│   │   └── ProductService.php    # (Orquestração da lógica de negócio)
-│   ├── Contracts/          # Camada de Contratos/Interfaces
-│   │   ├── ProductRepository.php # (Interface para persistência)
-│   │   └── ProductValidator.php  # (Interface para validação)
-│   ├── Domain/             # Camada de Domínio/Lógica de Negócio
-│   │   ├── Product.php           # (Entidade principal)
-│   │   └── SimpleProductValidator.php  # (Implementação da lógica de validação)
-│   └── Infra/              # Camada de Infraestrutura/Persistência
-│       └── FileProductRepository.php # (Implementação do Repositório - Lida com arquivos)
-├── storage/                # Dados e Arquivos de Persistência
-│   └── products.txt        # (Arquivo de dados - Simula o banco de dados)
-├── vendor/                 # Dependências do Composer (Autoload)
-├── composer.json           # Configuração do projeto e Autoloading PSR-4
-├── composer.lock
+solid-srp-demo/
+├── public/                  # Camada de apresentação (views e entradas HTTP)
+│   ├── index.php            # Página inicial
+│   ├── create.php           # Cadastro de produtos
+│   └── products.php         # Listagem de produtos
+├── src/                     # Código fonte organizado em camadas
+│   ├── Application/         # Serviços e orquestração da lógica
+│   │   └── ProductService.php
+│   ├── Contracts/           # Interfaces e contratos
+│   │   ├── ProductRepository.php
+│   │   └── ProductValidator.php
+│   ├── Domain/              # Entidades e regras de negócio
+│   │   ├── Product.php
+│   │   └── SimpleProductValidator.php
+│   └── Infra/               # Persistência e infraestrutura
+│       └── FileProductRepository.php
+├── storage/                 # Dados armazenados localmente
+│   └── products.txt
+├── vendor/                  # Dependências do Composer
+├── composer.json            # Configuração e autoload PSR-4
 └── README.md
 ```
 
+---
+
+##  **Conceito aplicado**
+Este projeto aplica o **Princípio da Responsabilidade Única (SRP)**, garantindo que cada classe tenha apenas uma função clara:
+- **Entidades** cuidam dos dados.  
+- **Serviços** gerenciam as operações.  
+- **Repositórios** tratam a persistência.  
+- **Validações** garantem consistência dos dados.
