@@ -1,0 +1,17 @@
+{
+  "name": "joao/solid-srp-demo",
+  "type": "projeto",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "iuiuiuiuiu",
+      "email": "iuiuiuiu@gmail.com"
+    }
+  ],
+  "require": {}
+}

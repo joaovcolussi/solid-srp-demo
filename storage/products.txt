@@ -1,0 +1,5 @@
+{"id":1,"name":"Bananas","price":19}
+{"id":2,"name":"Batata doce","price":123}
+{"id":3,"name":"amondega","price":123}
+{"id":4,"name":"freebo","price":123}
+{"id":5,"name":"limao","price":4}
